@@ -15,11 +15,15 @@ development:
   database: TestGuru_development
   host: localhost
   pool: 5
+  username: test-guru
+  password: <%= ENV['TESTGURU_DATABASE_PASSWORD'] %>
 
 
 test:
   <<: *default
   database: TestGuru_test
+  username: test-guru
+  password: <%= ENV['TESTGURU_DATABASE_PASSWORD'] %>
 
 
 #   production:
