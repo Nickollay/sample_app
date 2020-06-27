@@ -14,11 +14,11 @@ categories = Category.create!([ { title: :Front },
                                 { title: :Mobile }
                               ])
 
-tests = Test.create!([ { title: :React, level: 2, category_id: categories[3].id },
-                       { title: :JS,    level: 1, category_id: categories[3].id },
-                       { title: :Ruby,  level: 2, category_id: categories[1].id },
-                       { title: :RoR,   level: 1, category_id: categories[1].id },
-                       { title: :IOS,   level: 2, category_id: categories[2].id }
+tests = Test.create!([ { title: :React, level: 2, category_id: categories[3].id, user_id: users[1] },
+                       { title: :JS,    level: 1, category_id: categories[3].id, user_id: users[1] },
+                       { title: :Ruby,  level: 2, category_id: categories[1].id, user_id: users[1] },
+                       { title: :RoR,   level: 1, category_id: categories[1].id, user_id: users[1] },
+                       { title: :IOS,   level: 2, category_id: categories[2].id, user_id: users[1] }
                      ])
 
 questions = Question.create!([ { body: "Jolly, yo-ho-ho.", test_id: tests[5].id },
@@ -84,7 +84,7 @@ answer = Answer.create!([ { body: "Cum impositio studere, omnes nutrixes talem b
                             correct: :true,  question_id: questions[15].id, user_id: users[1].id }
                         ])
 
-user_test = UserTest.create!([ { user_id: users[1].id, test_id: tests[1].id },
+user_test = UserTestAssociation.create!([ { user_id: users[1].id, test_id: tests[1].id },
                                { user_id: users[2].id, test_id: tests[2].id },
                                { user_id: users[1].id, test_id: tests[3].id },
                                { user_id: users[2].id, test_id: tests[4].id },
