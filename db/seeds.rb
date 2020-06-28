@@ -84,9 +84,11 @@ answer = Answer.create!([ { body: "Cum impositio studere, omnes nutrixes talem b
                             correct: :true,  question_id: questions[15].id, user_id: users[1].id }
                         ])
 
-user_test = UserTestAssociation.create!([ { user_id: users[1].id, test_id: tests[1].id },
+tests_users = TestsUser.create!([{user_id: users[1].id, test_id: tests[1].id },
                                { user_id: users[2].id, test_id: tests[2].id },
                                { user_id: users[1].id, test_id: tests[3].id },
                                { user_id: users[2].id, test_id: tests[4].id },
                                { user_id: users[1].id, test_id: tests[5].id }
                              ])
+#TODO: change answers, seed answers_users
+answers_users = AnswersUser.create([ {  } ])

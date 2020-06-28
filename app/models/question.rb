@@ -1,6 +1,6 @@
 class Question < ApplicationRecord
-  has_many :answers
+  has_one :answer
 
-  belongs_to :user
+  # belongs_to :user
   belongs_to :test
 end

@@ -1,7 +1,7 @@
 class Test < ApplicationRecord
 
-  has_many :user_test_associations
-  has_many :users, through: :user_test_associations
+  has_many :tests_users
+  has_many :users, through: :tests_users
 
   has_many :questions
 
