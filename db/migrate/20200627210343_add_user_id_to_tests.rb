@@ -1,5 +1,9 @@
 class AddUserIdToTests < ActiveRecord::Migration[6.0]
   def change
-    add_foreign_key :users, :tests, on_delete: :cascade
+    change_table :tests do |t|
+      add_column :tests,  :creator_id, :bigint
+
+      add_foreign_key :tests, :users, column: 'creator_id', on_delete: :cascade
+    end
   end
 end
