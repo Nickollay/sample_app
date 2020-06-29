@@ -2,15 +2,10 @@ class User < ApplicationRecord
   def tests_participated_by_user(level)
   # TODO: where Devise'll be on board define user_id in method
     # id = current_user.id
-    tests_ids = UserTest.where(user_id: id).pluck(:test_id)
-    Test.where(id: tests_ids)
-
-
-    # Создайте инстанс-метод в модели User, который
-    # принимает
-    # в качестве аргумента значение уровня сложности и возвращает
-    # список всех Тестов, которые проходит
-    # или когда-либо проходил Пользователь на этом уровне сложности
-    Test.joins(:tests_users)
+  # TODO: after merging ex_5 change on that:
+  #  Test.joins('JOIN tests_users ON tests.id = tests_users.test_id')
+  #         .where(tests: { level: 1}, tests_users: { user_id: 2 } )
+    Test.joins('JOIN user_tests ON tests.id = user_tests.test_id')
+        .where(tests: { level: level}, user_tests: { user_id: id } )
   end
 end
