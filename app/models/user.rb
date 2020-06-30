@@ -6,9 +6,6 @@ class User < ApplicationRecord
   has_many :created_tests, foreign_key: :creator_id, class_name: 'Test', dependent: :nullify
 
   def tests_participated_by_user(level)
-  # TODO: where Devise'll be on board define user_id in method
-    # id = current_user.id
-    Test.joins(:tests_users)
-        .where(tests: { level: level}, tests_users: { user_id: id } )
+    Test.where(level: level)
   end
 end
