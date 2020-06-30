@@ -8,7 +8,7 @@ class User < ApplicationRecord
   def tests_participated_by_user(level)
   # TODO: where Devise'll be on board define user_id in method
     # id = current_user.id
-    # tests_ids = TestsUser.where(user_id: id).pluck(:test_id)
-    # Test.where(id: tests_ids)
+    Test.joins('JOIN tests_users ON tests.id = tests_users.test_id')
+        .where(tests: { level: level}, tests_users: { user_id: id } )
   end
 end

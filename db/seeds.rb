@@ -77,7 +77,7 @@ answer = Answer.create!([ { body: "Cum impositio studere, omnes nutrixes talem b
                             correct: :true,  question: questions[11] },
                           { body: "Tremble without tragedy, and we won’t avoid a ship.",
                             correct: :false, question: questions[12] },
-                          { body: "",
+                          { body: "Fun imperium.",
                             correct: :true,  question: questions[13] },
                           { body: "Nunquam imperium brabeuta.",
                             correct: :false, question: questions[14] },
