@@ -5,6 +5,8 @@ class User < ApplicationRecord
 
   has_many :created_tests, foreign_key: :creator_id, class_name: 'Test', dependent: :nullify
 
+  validates :name, :email, :encrypted_password, presence: true
+
   def tests_participated_by_user(level)
     Test.where(level: level)
   end

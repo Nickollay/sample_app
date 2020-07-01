@@ -14,6 +14,9 @@ class Test < ApplicationRecord
                                                .where(categories: { title: category } )
                                                .order(title: :desc) }
 
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
+
   def self.test_titles_in_category(category)
     Test.test_in_category(category).pluck(:title).uniq
     #Этот код работает в консоле, но если я меняю Test на test, с маленькой буквы
