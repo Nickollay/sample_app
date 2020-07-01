@@ -7,9 +7,24 @@ class Test < ApplicationRecord
 
   has_many :questions, dependent: :destroy
 
+  scope :easy, -> { where(level: 0..1) }
+  scope :middle, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+  scope :test_in_category, -> (category) { joins(:category)
+                                               .where(categories: { title: category } )
+                                               .order(title: :desc) }
+
   def self.test_titles_in_category(category)
-    Test.joins(:category)
-        .where(categories: { title: category } )
-        .order(title: :desc).pluck(:title).uniq
+    Test.test_in_category(category).pluck(:title).uniq
+    #Этот код работает в консоле, но если я меняю Test на test, с маленькой буквы
+    # выдаёт ошибку:
+    # irb(main):025:0> test.test_in_category('Front')
+    # Traceback (most recent call last):
+    #         2: from (irb):25
+    #         1: from (irb):25:in `test'
+    # ArgumentError (wrong number of arguments (given 0, expected 2..3))
+    #
+    # т.е. правильно все таки с большой?
+    # а то в доках где-то видел с маленькой.
   end
 end
