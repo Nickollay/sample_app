@@ -9,5 +9,19 @@ class User < ApplicationRecord
 
   def tests_participated_by_user(level)
     Test.where(level: level)
+    # v3
+    tests.where(tests: { level: level } )
+
+    # for console:
+    # User.where(id: 1).first.tests.where(tests: { level: 2 } )
+
+    # v2
+    # Test.joins(:tests_users)
+    #     .where(tests: { level: level}, tests_users: { user_id: id } )
+
+    # v1
+    # Test.joins('JOIN tests_users ON tests.id = tests_users.test_id')
+    #     .where(tests: { level: level}, tests_users: { user_id: id } )
+
   end
 end

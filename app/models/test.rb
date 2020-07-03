@@ -18,16 +18,17 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def self.test_titles_in_category(category)
-    Test.test_in_category(category).pluck(:title).uniq
-    #Этот код работает в консоле, но если я меняю Test на test, с маленькой буквы
-    # выдаёт ошибку:
-    # irb(main):025:0> test.test_in_category('Front')
-    # Traceback (most recent call last):
-    #         2: from (irb):25
-    #         1: from (irb):25:in `test'
-    # ArgumentError (wrong number of arguments (given 0, expected 2..3))
-    #
-    # т.е. правильно все таки с большой?
-    # а то в доках где-то видел с маленькой.
+    # v3
+    test_in_category(category).pluck(:title).uniq
+
+    # v2
+    # Test.joins(:category)
+    #     .where(categories: { title: category } )
+    #     .order(title: :desc).pluck(:title).uniq
+
+    # v1
+    # Test.joins('JOIN categories ON tests.category_id = categories.id')
+    #     .where(categories: { title: category } )
+    #     .order(title: :desc).pluck(:title).uniq
   end
 end
