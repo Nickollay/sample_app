@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :name, :email, :encrypted_password, presence: true
 
   def tests_participated_by_user(level)
-    Test.where(level: level)
     # v3
     tests.where(tests: { level: level } )
 

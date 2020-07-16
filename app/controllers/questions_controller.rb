@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: %i[index show create destroy]
+  before_action :find_test
 
   rescue_from ActiveRecord::RecordNotFound,  with: :rescue_with_question_not_found
 
@@ -9,32 +9,32 @@ class QuestionsController < ApplicationController
   end
 
   def show
-    @question = Question.find(params[:id])
-    render plain: @question.body
+    @question = @test.questions.find(params[:id])
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.new
   end
 
   def create
-    @question = Question.new(question_params)
+    @question = @test.questions.new(question_params)
     if @question.save
-      redirect_to action: :show
+      render :show
     else
-      render action: :new, flash: {alert: 'Some error occured.'}
+      render :new
     end
   end
 
   def destroy
-    @test.question.destroy
-    render plain: 'Question was deleted/'
+    @question = @test.questions.find(params[:id])
+    @question.destroy
+    render plain: 'Question was deleted!'
   end
 
   private
 
   def question_params
-    params.require(:question).permit(:body, :test_id)
+    params.require(:question).permit(:body)
   end
 
   def rescue_with_question_not_found
