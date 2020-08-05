@@ -1,1 +1,6 @@
-<%= render plain: @question.body %>
+<%#= render plain: @question.body %>
+<p>
+  <%= link_to 'Back', test_path(@question.test) %>
+</p>
+<%#= @question.body %>
+<%= render 'question', question: @question, test: @question.test %>
