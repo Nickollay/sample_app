@@ -1,6 +1,6 @@
 module SharedHelper
   def current_year
-    Time.now.year
+    Time.current.year
   end
 
   def git_hub_url(author, repo)

@@ -1,11 +1,9 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, except: [:show, :edit, :update, :destroy]
+  before_action :find_test, only: :new
   before_action :find_question, only: [:show, :destroy, :edit, :update]
 
 
-  def index
-    @questions = @test.questions.order(created_at: :asc).pluck(:body)
-  end
+  def index; end
 
   def show; end
 
@@ -25,7 +23,7 @@ class QuestionsController < ApplicationController
   def edit; end
 
   def update
-    if @question.save
+    if @question.update(question_params)
       redirect_to @question
     else
       render :edit
