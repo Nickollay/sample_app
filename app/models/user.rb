@@ -1,11 +1,15 @@
+require 'digest/sha1'
+
 class User < ApplicationRecord
+  include Auth
 
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
+  # has_many :authored_tests, class_name: 'Test', foreign_key: :user_id
 
   has_many :created_tests, foreign_key: :creator_id, class_name: 'Test', dependent: :nullify
 
-  validates :name, :email, :encrypted_password, presence: true
+  has_secure_password
 
   def tests_participated_by_user(level)
     tests.where(tests: { level: level } )

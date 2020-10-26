@@ -41,7 +41,5 @@ yarn-debug.log*
 .yarn-integrity
 
 .idea/*
-Gemfile
-Gemfile.lock
 
 /spec/*
