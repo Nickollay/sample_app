@@ -4,6 +4,7 @@
   border-radius: 5px;
 }
 
-.flash-alert {
-  border-color: #ef2727
-}
+.error {border-color: #8a1f11;}
+.notice {border-color: #514721;}
+.success {border-color: #264409;}
+.alert {border-color: #ef2727;}

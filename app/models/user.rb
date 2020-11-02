@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
 class User < ApplicationRecord
-  REGEX_EMAIL_PATTERN = /\A(.+)@(.+)\z/
+  REGEX_EMAIL_PATTERN = /\A[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\z/
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, foreign_key: :creator_id, class_name: 'Test', dependent: :nullify
