@@ -1,14 +1,19 @@
-require 'digest/sha1'
-
 class User < ApplicationRecord
+
+  devise :database_authenticatable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable,
+         :confirmable
+
   REGEX_EMAIL_PATTERN = /\A[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\z/
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages
   has_many :created_tests, foreign_key: :creator_id, class_name: 'Test', dependent: :nullify
 
   validates :email, presence: true, uniqueness: true, format: { with: REGEX_EMAIL_PATTERN }
-
-  has_secure_password
 
   def tests_participated_by_user(level)
     tests.where(tests: { level: level } )
