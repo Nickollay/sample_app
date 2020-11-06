@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
 
   def after_sign_in_path_for(resource)
-    # binding.pry
-    flash[:notice] = "Welcome #{current_user.name}"
-    return admin_tests_path if current_user.is_a?(Admin)
-
-    root_path
+    if resource.is_a?(Admin)
+      admin_tests_path
+    else
+      super
+    end
   end
 
   protected
