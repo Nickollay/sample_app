@@ -1,20 +1,20 @@
-<%= link_to 'Back', admin_tests_path %>
+<%= link_to t('back'), admin_tests_path %>
 <p>
-  <strong>Title:</strong>
+  <strong><%= t('.header') %></strong>
   <%= @test.title %>
 </p>
 <p>
-  <strong>Level:</strong>
+  <strong><%= t('.level')  %></strong>
   <%= @test.level %>
 </p>
 
-<%= link_to 'Edit', edit_admin_test_path(@test) %>
-<%= link_to 'Delete',
+<%= link_to t('edit'), edit_admin_test_path(@test) %>
+<%= link_to t('delete'),
             admin_test_path(@test),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %>
+                data: { confirm: t('sure') } %>
 <p>
-  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+  <%= link_to t('.new_question'), new_admin_test_question_path(@test) %>
 </p>
 <!--<ol>-->
   <%= render @test.questions %>

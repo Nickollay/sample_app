@@ -1,0 +1,86 @@
+ru:
+  hello: "Привет мир"
+
+  back: "Назад"
+  show: "Смотреть"
+  edit: "Редактировать"
+  delete: "Удалить"
+  sure: "Вы уверены?"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    select:
+      prompt: "Пожалуйста выбирете"
+
+
+    label:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category_id: "Категория"
+      user:
+        remember_me: "Запомнить"
+
+  tests:
+    index:
+      header: "Доступные тесты"
+      title: 'Название'
+      level: 'Уровень'
+      questions: 'Вопросы'
+      actions: 'Действие'
+    test:
+      start: "Старт"
+
+  layouts:
+    nav:
+      hello: "Привет %{name} Гуру"
+
+  admin:
+    tests:
+      index:
+        header: "Доступные тесты"
+        new_test: "Создать новый тест"
+        title: 'Title'
+        level: 'Level'
+        questions: 'Questions'
+        actions: 'Actions'
+      create:
+        success: "Тест успешно создан"
+      new:
+        header: "Создать новый тест"
+      show:
+        header: "Название:"
+        level: "Уровень:"
+        new_question: 'Создать новый вопрос'
+      destroy:
+        success: 'Тест успешно удален!'
+      update:
+        success: 'Тест успешно обновлен!'
+    nav:
+      title: "TestGuru панель администратора"
+      hello: "Привет %{name} Гуру"
+
+  test_passages:
+    show:
+      next: 'Следующий'
+      question: 'Вопрос'
+      header: "Проходим: %{title} Тест"
+    result:
+      header: "Тест: %{title} выполнен!"
+      correct: "Вы правильно ответили на:"
+      pass: 'Поздравляем вы, удачно прошли тест!'
+      fail: 'Вы не прошли тест!'
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибок"
+
+  tests_mailer:
+    subject: "Вы только что завершили TestGuru тест."

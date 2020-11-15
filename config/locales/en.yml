@@ -1,33 +1,85 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+
+  back: "Back"
+  show: "Show"
+  edit: "Edit"
+  delete: "Delete"
+  sure: "Are you sure?"
+
+  helpers:
+    submit:
+      tests:
+        create: "Create test"
+        update: "Update test"
+
+    select:
+      prompt: "Please select"
+
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+      user:
+        remember_me: "Remember me"
+
+  tests:
+    index:
+      header: "Tricky tests"
+      title: 'Title'
+      level: 'Level'
+      questions: 'Questions'
+      actions: 'Actions'
+    test:
+      start: "Start"
+
+  layouts:
+    nav:
+      hello: "Welcome %{name} Guru"
+
+  admin:
+    tests:
+      index:
+        header: "Tricky tests"
+        new_test: "Create new test"
+        title: 'Title'
+        level: 'Level'
+        questions: 'Questions'
+        actions: 'Actions'
+      create:
+        success: "Test was successfully created."
+      new:
+        header: "Create new test"
+      show:
+        header: "Title:"
+        level: "Level:"
+        new_question: 'New question'
+      destroy:
+        success: 'Test was successfully deleted!'
+      update:
+        success: 'Test was successfully updated!'
+    nav:
+      title: "TestGuru admin Panel"
+      hello: "Welcome %{name} Guru"
+
+  test_passages:
+    show:
+      next: 'Next'
+      question: 'Question'
+      header: "Passing %{title} Test"
+    result:
+      header: "The %{title} was completed!"
+      correct: "You correctly answered:"
+      pass: 'Congratulation, you succesfuly pass the test!'
+      fail: 'You failed to pass test!'
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error occurred:"
+        other: "%{count} errors occurred:"
+
+  tests_mailer:
+    subject: "You've just completed the TestGuru test"

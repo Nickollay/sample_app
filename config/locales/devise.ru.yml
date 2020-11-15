@@ -4,7 +4,7 @@ ru:
     confirmations:
       confirmed: Ваш адрес эл. почты успешно подтвержден.
       new:
-        resend_confirmation_instructions: Выслать повторно письмо с активацией
+        resend_confirmation_instructions: "Выслать повторно письмо с активацией"
       send_instructions: В течение нескольких минут вы получите письмо с инструкциями по подтверждению адреса эл. почты.
       send_paranoid_instructions: Если ваш адрес эл. почты есть в системе, то в течение нескольких минут вы получите письмо с инструкциями по его подтверждению.
     failure:
@@ -64,6 +64,9 @@ ru:
     registrations:
       destroyed: До свидания! Ваша учетная запись удалена. Надеемся снова увидеть вас.
       edit:
+        new_password: 'new_password'
+        characters_minimum: 'минимум символов'
+        current_password: "Текущий пароль"
         are_you_sure: Вы уверены?
         cancel_my_account: Удалить учетную запись
         currently_waiting_confirmation_for_email: 'Ожидается подтверждение адреса E-mail: %{email}'
@@ -74,6 +77,13 @@ ru:
         we_need_your_current_password_to_confirm_your_changes: введите текущий пароль для подтверждения изменений
       new:
         sign_up: Регистрация
+        title: 'Стань Гуру'
+        first_name: 'имя'
+        last_name: 'фамилия'
+        email: 'эмейл'
+        characters_minimum: 'минимум символов'
+        new-password: 'новый пароль'
+
       signed_up: Добро пожаловать! Вы успешно зарегистрировались.
       signed_up_but_inactive: Вы успешно зарегистрированы. Однако, вы не можете войти в систему, потому что ваша учетная запись не активирована.
       signed_up_but_locked: Вы успешно зарегистрированы. Однако, вы не можете войти в систему, потому что ваша учетная запись заблокирована.
@@ -85,6 +95,7 @@ ru:
       already_signed_out: Выход из системы уже выполнен.
       new:
         sign_in: Войти
+        title: 'Врата TestGuru'
       signed_in: Привет %{user_name}.
       signed_out: Выход из системы выполнен.
     shared:

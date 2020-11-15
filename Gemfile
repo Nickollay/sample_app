@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
-# gem 'rails-i18n', '~> 6.0.0'
+gem 'rails-i18n', '~> 6.0.0'
 
 gem 'devise', '~>4.0'
 group :development, :test do
@@ -37,10 +37,10 @@ group :development, :test do
   # gem 'faker', '~> 2.13'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 
-  gem 'pry-rails'
-  gem 'pry'
-  gem 'pry-remote'
-  gem 'pry-nav'
+  # gem 'pry-rails'
+  # gem 'pry'
+  # gem 'pry-remote'
+  # gem 'pry-nav'
 end
 
 group :development do

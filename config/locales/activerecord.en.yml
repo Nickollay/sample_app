@@ -1,0 +1,41 @@
+en:
+  activerecord:
+    models:
+      admin: 'Admin'
+      answer: "Answer"
+      answers_user: 'AnswerUser'
+      application_record: 'ApplicationRecord'
+      category: "Category"
+      question: "Question"
+      test: "Test"
+      test_passage: "TestPassage"
+      user: "User"
+    attributes:
+      admin:
+        last_name: "last_name"
+        first_name: "first_name"
+        email: "email"
+        encrypted_password: "encrypted_password"
+        password: "password"
+      answer:
+        correct: "correct"
+        body: "body"
+      category:
+        title: "title"
+      question:
+        body: "body"
+      test:
+        title: "Title"
+        level: "level"
+      test_passage:
+        correct_questions: "correct_questions"
+      user:
+        last_name: "last_name"
+        first_name: "first_name"
+        email: "email"
+        encrypted_password: "encrypted_password"
+        password: "password"
+    errors:
+      messages:
+        blank: "can't be blank"
+

@@ -1,0 +1,42 @@
+ru:
+  activerecord:
+    models:
+      admin: "Администратор"
+      answer: "Ответ"
+      answers_user: "Ответы пользователя"
+      application_record: "Запись приложения"
+      category: "Категория"
+      question: "Вопрос"
+      test: "Тест"
+      test_passage: "Прохождение теста"
+      user: "Пользователь"
+
+    attributes:
+      admin:
+        last_name: "Фамилия"
+        first_name: "Имя"
+        email: "Эмейл"
+        encrypted_password: "Пароль"
+        password: "Пароль"
+      answer:
+        correct: "Правильно"
+        body: "Тело"
+      category:
+        title: "Заголовок"
+      question:
+        body: "Тело"
+      test:
+        title: "Заголовок"
+        level: "Уровень"
+      test_passage:
+        correct_questions: "Правильно отвеченные вопросы"
+      user:
+        last_name: "Фамилия"
+        first_name: "Имя"
+        email: "Эмейл"
+        encrypted_password: "Пароль"
+        password: "Пароль"
+    errors:
+      messages:
+        blank: "не может быть пустым"
+
