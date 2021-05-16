@@ -60,7 +60,7 @@ ru:
       update:
         success: 'Тест успешно обновлен!'
     nav:
-      title: "TestGuru панель администратора"
+      title: "панель администратора"
       hello: "Привет %{name} Гуру"
 
   test_passages:
