@@ -1,12 +1,19 @@
-<h1><%= t('tests.index.header') %></h1>
+<div class="row  justify-content-center mt-3">
 
-<table>
-  <tr>
-    <th><%= t('.title') %></th>
-    <th><%= t('.level') %></th>
-    <th><%= t('.questions') %></th>
-    <th><%= t('.actions') %></th>
-  </tr>
+<h1 class='col-8'><%= t('tests.index.header') %></h1>
 
+<table class="table table-hover table-dark table-bordered col-8">
+  <caption><%= t('tests.index.header') %></caption>
+
+  <thead class="thead-light">
+    <tr>
+      <th scope="col"><%= '#' %></th>
+      <th scope="col"><%= t('.title') %></th>
+      <th scope="col"><%= t('.level') %></th>
+      <th scope="col"><%= t('.questions') %></th>
+      <th scope="col"><%= t('.actions') %></th>
+    </tr>
+  </thead>
   <%= render @tests %>
 </table>
+</div>
