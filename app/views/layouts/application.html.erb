@@ -15,8 +15,11 @@
   </head>
 
   <body>
-    <%= render 'layouts/nav' %>
-
+    <% if current_user.is_a?(Admin) %>
+      <%= render 'admin/nav' %>
+    <% else %>
+      <%= render 'shared/nav' %>
+    <% end %>
     <div class="container">
       <%= render 'shared/flash' %>
       <%= yield %>

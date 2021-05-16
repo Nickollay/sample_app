@@ -1,8 +1,8 @@
 <nav  class = 'navbar navbar-dark bg-dark'>
   <%= link_to 'Test Guru!', root_path, class: "navbar-brand" %>
   <%= link_to t('.title'), admin_tests_path %>
-  <span class="navbar-text"><%=  %></span>
-
-  <span class="text-light"><%= t('.hello', name: current_user.name) %></span>
+  <span class="text-light">
+    <%= t('.hello', name: current_user.name) %>
+  </span>
   <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
 </nav>
