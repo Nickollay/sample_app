@@ -59,9 +59,7 @@ ru:
         success: 'Тест успешно удален!'
       update:
         success: 'Тест успешно обновлен!'
-    nav:
-      title: "TestGuru панель администратора"
-      hello: "Привет %{name} Гуру"
+
 
   test_passages:
     show:
@@ -81,6 +79,9 @@ ru:
         many: "Обнаружено %{count} ошибок"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибок"
+    nav:
+      title: "панель администратора"
+      hello: "Привет %{name} Гуру"
 
   tests_mailer:
     subject: "Вы только что завершили TestGuru тест."

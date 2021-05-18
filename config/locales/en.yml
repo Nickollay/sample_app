@@ -61,7 +61,7 @@ en:
       update:
         success: 'Test was successfully updated!'
     nav:
-      title: "TestGuru admin Panel"
+      title: "admin Panel"
       hello: "Welcome %{name} Guru"
 
   test_passages:
