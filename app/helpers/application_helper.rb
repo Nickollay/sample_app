@@ -1,10 +1,12 @@
 module ApplicationHelper
+  FLASH_CLASS = {
+   'notice' => "alert alert-info",
+   'success' => "alert alert-success",
+   'alert' => "alert alert-warning",
+   'error' => "alert alert-danger",
+  }.freeze
+
   def flash_class(level)
-    case level
-    when 'notice' then "alert alert-info"
-    when 'success' then "alert alert-success"
-    when 'alert' then "alert alert-warning"
-    when 'error' then "alert alert-danger"
-    end
+    FLASH_CLASS[level]
   end
 end
