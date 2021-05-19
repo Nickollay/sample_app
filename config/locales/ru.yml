@@ -66,11 +66,15 @@ ru:
       next: 'Следующий'
       question: 'Вопрос'
       header: "Проходим: %{title} Тест"
+      create_gist: 'Создать gist'
     result:
       header: "Тест: %{title} выполнен!"
       correct: "Вы правильно ответили на:"
       pass: 'Поздравляем вы, удачно прошли тест!'
       fail: 'Вы не прошли тест!'
+    gist:
+      success: 'Gist успешно сохранен'
+      failure: 'Во время сохранения gist произощла ошибка'
 
   shared:
     errors:

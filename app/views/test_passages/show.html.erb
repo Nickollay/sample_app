@@ -1,3 +1,7 @@
+<!--<div class="container">-->
+  <%#= render 'shared/flash' %>
+<!--</div>-->
+
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <p>
@@ -7,6 +11,7 @@
 <b>
   <%= @test_passage.current_question.body %>
 </b>
+
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
   <%= form.collection_check_boxes :answers_ids, @test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
     <p>
@@ -14,5 +19,6 @@
       <%= b.label %>
     </p>
   <% end %>
+  <p> <%= link_to t('create_gist'), gist_test_passage_path(@test_passage), method: :post %> </p>
   <p><%= form.submit t('.next') %></p>
 <% end %>

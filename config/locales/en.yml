@@ -69,11 +69,15 @@ en:
       next: 'Next'
       question: 'Question'
       header: "Passing %{title} Test"
+      create_gist: 'Create gist'
     result:
       header: "The %{title} was completed!"
       correct: "You correctly answered:"
       pass: 'Congratulation, you succesfuly pass the test!'
       fail: 'You failed to pass test!'
+    gist:
+      success: 'Gist was successfully created!'
+      failure: 'An error occurred while saving gist!'
 
   shared:
     errors:
