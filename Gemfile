@@ -30,7 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rails-i18n', '~> 6.0.0'
 gem 'devise', '~>4.0'
 gem 'faraday'
-
+# gem 'faraday_json'
+# gem 'octokit', '~> 4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -38,7 +39,7 @@ group :development, :test do
   # gem 'faker', '~> 2.13'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
 
-  gem 'pry-rails'
+  # gem 'pry-rails'
   gem 'pry'
   gem 'pry-remote'
   gem 'pry-nav'
