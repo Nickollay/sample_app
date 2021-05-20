@@ -19,6 +19,7 @@
       <%= b.label %>
     </p>
   <% end %>
+<!--  TODO: add form for user to add his own tokken for git-->
   <p> <%= link_to t('create_gist'), gist_test_passage_path(@test_passage), method: :post %> </p>
   <p><%= form.submit t('.next') %></p>
 <% end %>
