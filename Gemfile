@@ -29,9 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'rails-i18n', '~> 6.0.0'
 gem 'devise', '~>4.0'
-gem 'faraday'
-# gem 'faraday_json'
-# gem 'octokit', '~> 4.0'
+gem 'octokit', '~> 4.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
