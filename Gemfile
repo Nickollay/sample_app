@@ -38,6 +38,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # gem 'faker', '~> 2.13'
   gem 'rspec-rails', '~> 4.0', '>= 4.0.1'
+  gem 'dotenv-rails', groups: [:development, :test]
 
   # gem 'pry-rails'
   gem 'pry'
