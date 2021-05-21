@@ -1,11 +1,7 @@
-<!--<div class="container">-->
-  <%#= render 'shared/flash' %>
-<!--</div>-->
-
 <h1><%= t('.header', title: @test_passage.test.title) %></h1>
 
 <p>
-<%= t('.question') %> <%= @test_passage.current_question_number %> / <%= @test_passage.test.number_of_questions %>
+  <%= t('.question') %> <%= @test_passage.current_question_number %> / <%= @test_passage.test.number_of_questions %>
 </p>
 
 <b>

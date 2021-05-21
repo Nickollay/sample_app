@@ -5,8 +5,9 @@
     <%= link_to 'Gists', admin_gists_path %>
 
     <span class="text-light">
-    <%= t('.hello', name: current_user.name) %>
-  </span>
+      <%= t('.hello', name: current_user.name) %>
+    </span>
+
     <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
   </nav>
 <% else %>
@@ -14,13 +15,13 @@
     <%= link_to 'Test Guru!', root_path, class: "navbar-brand" %>
 
     <span class="navbar-text ">
-    <% if user_signed_in?  %>
-      <b><%= t('.hello', name: current_user.name) %></b> |
-        <%= link_to 'Logout', destroy_user_session_path, method: "delete", class: '' %>
-    <% else %>
-      <%= link_to 'Login', new_user_session_path %> |
-        <%= link_to 'Sign up', new_user_registration_path %>
-    <% end %>
-  </span>
+      <% if user_signed_in?  %>
+        <b><%= t('.hello', name: current_user.name) %></b> |
+          <%= link_to 'Logout', destroy_user_session_path, method: "delete", class: '' %>
+      <% else %>
+        <%= link_to 'Login', new_user_session_path %> |
+          <%= link_to 'Sign up', new_user_registration_path %>
+      <% end %>
+    </span>
   </nav>
 <% end %>
