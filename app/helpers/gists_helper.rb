@@ -6,7 +6,7 @@ module GistsHelper
   end
 
   def gist_url(gist)
-    link_to gist.url.split('/').last, gist.url
+    link_to gist.hash_id, gist.url
   end
 
   def user_email(gist)

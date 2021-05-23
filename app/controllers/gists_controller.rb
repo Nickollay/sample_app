@@ -4,6 +4,7 @@ class GistsController < ApplicationController
   def create
     @current_question = @test_passage.current_question
     response = GistQuestionService.new(@current_question).call
+    @hash_id = response.id
     @html_url = response.html_url
 
     if success?(response) && create_gist
@@ -22,10 +23,10 @@ class GistsController < ApplicationController
   end
 
   def success?(response)
-    response.html_url.present?
+    response.html_url.present? && response.id.present?
   end
 
   def create_gist
-    Gist.new(user: current_user, question: @current_question, url: @html_url).save
+    Gist.new(user: current_user, question: @current_question, hash_id: @hash_id).save
   end
 end
