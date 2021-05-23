@@ -3,11 +3,11 @@ class GistsController < ApplicationController
 
   def create
     @current_question = @test_passage.current_question
-    response = GistQuestionService.new(@current_question).call
-    @hash_id = response.id
+    response = CreateGistFromQuestion.call(@current_question)
+    @hash_id = response.hash_id
     @html_url = response.html_url
 
-    if success?(response) && create_gist
+    if response.success? && create_gist
       flash[:success] = view_context.link_to( t('.success'), @html_url)
     else
       flash[:error] = t('.failure')
@@ -20,10 +20,6 @@ class GistsController < ApplicationController
 
   def set_test_passage
     @test_passage = TestPassage.find(params[:id])
-  end
-
-  def success?(response)
-    response.html_url.present? && response.id.present?
   end
 
   def create_gist
