@@ -6,6 +6,7 @@ class CreateGistFromQuestion
   def call(question, client)
     @question = question
     @test = question.test
+
     response = client.create_gist(gist_params)
 
     return OpenStruct.new(success?: false) unless success?(response)
