@@ -17,7 +17,7 @@ class CreateGistFromQuestion
   private
 
   def self.default_client
-    Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
+    Octokit::Client.new(access_token: ENV.fetch('GITHUB_TOKEN'))
   end
 
   def gist_params
@@ -37,6 +37,6 @@ class CreateGistFromQuestion
   end
 
   def success?(response)
-    response&.html_url.present? && response&.id.present?
+    response&.html_url.present?
   end
 end
